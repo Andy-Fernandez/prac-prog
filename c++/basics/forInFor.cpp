@@ -18,7 +18,7 @@ int main(){
     j++;
     if (j < x) goto loopSecond;
     else goto loopMain;
-  
+
   final:
     return 0;
 }

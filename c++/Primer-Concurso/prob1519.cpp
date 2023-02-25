@@ -42,6 +42,7 @@ int main() {
   int j = 1;
   cin >> n;
 
+  //Creating all the numbers from 1 to 100
   creating:
     if (i > 100) goto show;
     v[i] = 2*(i*i) - i;
