@@ -34,15 +34,19 @@ void forDecomposed(){
 }
 void forDecomposed2(){
   int n, i;
+   // Lectura de datos antes de entrar al loop
   main:
     i = 0;
     cin >> n;
     goto loop;
+  //Inicio del loop
   loop:
     goto process;
+  //Proceso a realizar en cada iteracion
   process:
     cout << i << endl;
     i++;
+    //Condicion de salida del loop
     if (i < n) goto loop;
     else goto final;
   final:
