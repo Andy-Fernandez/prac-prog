@@ -61,8 +61,9 @@ int main() {
     //   goto loop;
     // }
     // cout << "To string: " <<to_string(v[i]) << endl;
-    s = s + to_string(v[i]) + " ";
+    s += to_string(v[i]);
     i++;
+    if (i <= x) s += " ";
     if (i <= x) goto loop;
     else goto show2;
 
