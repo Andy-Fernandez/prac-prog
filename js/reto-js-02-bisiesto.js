@@ -31,3 +31,11 @@ console.log(isLeapYear(2000)); // true
 console.log(isLeapYear(-2024)); // false
 console.log(isLeapYear(1984.25)); // false
 console.log(isLeapYear(1984)); // true
+
+//optimización del código
+function isLeapYear2(year) {
+  if (year <= 0 || year % 1 !== 0) {
+    return false;
+  }
+  return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+}
