@@ -1,3 +1,4 @@
+// https://platzi.com/clases/6636-javascript-30-dias/59864-playground-calcula-anos-bisiestos/
 // En este desafío, debes crear la lógica de la función isLeapYear, que determina si un año es bisiesto o no. Un año es bisiesto si cumple con las siguientes condiciones:
 
 // Es divisible por 4, pero no por 100.
