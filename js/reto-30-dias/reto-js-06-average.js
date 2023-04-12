@@ -49,14 +49,46 @@
 //   ]
 // }
 export function getStudentAverage(students) {
-  let classAverage = 0
-  studentsString = []
+  let classAverage = 0;
+  let studentsString = [];
   for (const student of students) {
     let studentObject = {
-      nameS: student.name,
-      average: student.reduce(function (acumulador, numero) {
+      name: student.name,
+      average: student.grades.reduce(function (acumulador, numero) {
         return acumulador + numero;
-      }, 0)
-    }
+      }, 0) / student.grades.length
+    };
+    studentObject.average = parseFloat(studentObject.average.toFixed(2));
+    classAverage += studentObject.average;
+    studentsString.push(studentObject);
+  }
+  classAverage /= students.length;
+  classAverage = parseFloat(classAverage.toFixed(2));
+  console.log(classAverage);
+  return {
+    classAverage: classAverage,
+    students: studentsString
+  }
+}
+
+
+// Another way:
+export function getStudentAverage(students) {
+  const studentsString = students.map(student => {
+    const average = student.grades.reduce((acc, grade) => acc + grade, 0) / student.grades.length;
+    const roundedAverage = +average.toFixed(2);
+    return { name: student.name, average: roundedAverage };
+  });
+  
+  const classAverage = students.reduce((acc, student) => {
+    const average = student.grades.reduce((acc, grade) => acc + grade, 0) / student.grades.length;
+    return acc + average;
+  }, 0) / students.length;
+  const roundedClassAverage = +classAverage.toFixed(2);
+
+  console.log(roundedClassAverage);
+  return {
+    classAverage: roundedClassAverage,
+    students: studentsString
   }
 }
