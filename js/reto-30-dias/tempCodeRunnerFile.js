@@ -1,13 +1,16 @@
-let size = 5;
-let character = '*';
-let cadena = '';
-for (let i = 1; i <= size; i++) {
-  for (let j = i; j < size; j++){
-    cadena = cadena + " ";
+function isPalindrome(word){
+  let len = word.length;
+
+  let i = 0;
+  let j = len-1;
+
+  while(true){
+    console.log(i)
+    return false;
   }
-  for (let k = 1; k <= i; k++){
-    cadena = cadena + character;
-  }
-  cadena = cadena + "\n";
+
+
+  console.log(len);
 }
-console.log(cadena);
+
+isPalindrome("Nice");

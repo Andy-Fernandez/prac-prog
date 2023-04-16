@@ -79,7 +79,7 @@ export function getStudentAverage(students) {
     const roundedAverage = +average.toFixed(2);
     return { name: student.name, average: roundedAverage };
   });
-  
+
   const classAverage = students.reduce((acc, student) => {
     const average = student.grades.reduce((acc, grade) => acc + grade, 0) / student.grades.length;
     return acc + average;
